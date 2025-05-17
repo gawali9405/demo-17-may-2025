@@ -19,10 +19,9 @@ function App() {
       const res = await fetch("https://fakestoreapi.com/products");
       const data = await res.json();
       setFechData(data);
-    }
+    };
     response();
   }, []);
-
 
   return (
     <>
@@ -31,7 +30,7 @@ function App() {
 
         <button onClick={handleCounter}>counter</button>
         <h2> Data from Child : {JSON.stringify(dataFromLogin)}</h2>
-        <Login setDataFromChild={setDataFromLogin} counter = {count} />
+        <Login setDataFromChild={setDataFromLogin} counter={count} />
       </div>
 
       <div>
@@ -41,12 +40,13 @@ function App() {
 
       <div>
         {fectData.length > 0 &&
-          fectData.map((item)=>(
+          fectData.map((item) => (
             <div key={item.title}>
-              <h2>{item.title}</h2>
+              <ul>
+                <li>{item.title}</li>
+              </ul>
             </div>
-          ))
-        }
+          ))}
       </div>
     </>
   );
