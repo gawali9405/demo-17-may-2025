@@ -42,9 +42,9 @@ function App() {
         {fectData.length > 0 &&
           fectData.map((item) => (
             <div key={item.title}>
-              <ul>
-                <li>{item.title}</li>
-              </ul>
+              <h3>
+                {item.title}
+              </h3>
             </div>
           ))}
       </div>
