@@ -14,7 +14,9 @@ const Register = ({ setDataFromChild }: loginProp) => {
   const handleLogin = () => {
     const userData = {
       name: name,
+      email:email,
       password: password,
+      confirmPassword:confirmPassword
     };
     setShowData(userData);
     setDataFromChild(userData);
@@ -22,6 +24,8 @@ const Register = ({ setDataFromChild }: loginProp) => {
 
   const handleReset = () => {
     setName("");
+    setEmail("")
+    setConfirmPassword("")
     setPassword("");
     setShowData({});
     setDataFromChild({});
@@ -44,6 +48,13 @@ const Register = ({ setDataFromChild }: loginProp) => {
       />
       <br />
       <p> password : {password}</p> <br />
+      <input
+        type="password"
+        placeholder="Enter your user"
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <br />
+      <p> confirmPassword : {confirmPassword}</p> <br />
       <input
         type="password"
         placeholder="Enter your user"
