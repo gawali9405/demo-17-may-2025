@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-interface loginProp {
-  setDataFromChild: (newType: {}) => void;
+interface registerProp {
+  setDataFromRegister: (newType: {}) => void;
 }
 
-const Register = ({ setDataFromChild }: loginProp) => {
+const Register = ({ setDataFromRegister }: registerProp) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +19,7 @@ const Register = ({ setDataFromChild }: loginProp) => {
       confirmPassword:confirmPassword
     };
     setShowData(userData);
-    setDataFromChild(userData);
+    setDataFromRegister(userData);
   };
 
   const handleReset = () => {
@@ -28,7 +28,7 @@ const Register = ({ setDataFromChild }: loginProp) => {
     setConfirmPassword("")
     setPassword("");
     setShowData({});
-    setDataFromChild({});
+    setDataFromRegister({});
   };
 
   return (
@@ -44,7 +44,7 @@ const Register = ({ setDataFromChild }: loginProp) => {
       <input
         type="email"
         placeholder="Enter your email"
-        onChange={(e) => setName(e.target.value)}
+        onChange={(e) => setEmail(e.target.value)}
       />
       <br />
       <p> password : {password}</p> <br />
@@ -58,7 +58,7 @@ const Register = ({ setDataFromChild }: loginProp) => {
       <input
         type="password"
         placeholder="Enter your user"
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={(e) => setConfirmPassword(e.target.value)}
       />
       <div>
         <button onClick={handleReset}>Reset</button>
