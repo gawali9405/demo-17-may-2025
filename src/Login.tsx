@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-interface loginProp {
-  counter:Number,
+interface loginProp { 
+    counter: number;
   setDataFromChild: (newType: {}) => void;
 }
 
-const Login = ({ setDataFromChild, counter }: loginProp) => {
+const Login = ({ setDataFromChild,counter}: loginProp) => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [showData, setShowData] = useState({});
@@ -16,8 +16,7 @@ const Login = ({ setDataFromChild, counter }: loginProp) => {
       password: password,
     };
     setShowData(userData);
-    setDataFromChild(userData);
-    counter();
+    setDataFromChild(userData); 
   };
 
   const handleReset = () => {
@@ -44,7 +43,7 @@ const Login = ({ setDataFromChild, counter }: loginProp) => {
       />
       <div>
         <button onClick={handleReset}>Reset</button>
-        <button onClick={handleLogin}>Login</button>
+        <button onClick={handleLogin}>Login {counter}</button>
       </div>
       <h2>{JSON.stringify(showData)}</h2>
     </>
