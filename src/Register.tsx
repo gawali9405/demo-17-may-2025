@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 
 interface loginProp {
-    setCount :Number,
   setDataFromChild: (newType: {}) => void;
 }
 
-const Login = ({ setDataFromChild,setCount }: loginProp) => {
+const Register = ({ setDataFromChild }: loginProp) => {
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [showData, setShowData] = useState({});
 
   const handleLogin = () => {
@@ -28,10 +29,17 @@ const Login = ({ setDataFromChild,setCount }: loginProp) => {
 
   return (
     <>
-      <p> userName : {name}</p> <br />
+      <p> Name : {name}</p> <br />
       <input
         type="text"
-        placeholder="Enter your user"
+        placeholder="Enter your name"
+        onChange={(e) => setName(e.target.value)}
+      />
+      <br />
+      <p> Email : {email}</p> <br />
+      <input
+        type="email"
+        placeholder="Enter your email"
         onChange={(e) => setName(e.target.value)}
       />
       <br />
@@ -50,4 +58,4 @@ const Login = ({ setDataFromChild,setCount }: loginProp) => {
   );
 };
 
-export default Login;
+export default Register;
