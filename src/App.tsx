@@ -42,7 +42,16 @@ function App() {
         {fectData.length > 0 &&
           fectData.map((item) => (
             <div key={item.title}>
-              <h3>
+              <h3
+                style={{
+                  color: "white",
+                  fontSize: "20px",
+                  float: "left",
+                  margin: "10px",
+                  border: "1px solid white",
+                  padding: "10px",
+                }}
+              >
                 {item.title}
               </h3>
             </div>
